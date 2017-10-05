@@ -12,9 +12,12 @@ body {
 	color: #333333;
 }
 
+/*Header and Navigation Bar*/
+
 #nav-bar-container {
 	overflow: hidden;
 	position: fixed;
+	z-index: 1;
 	height: 6em;
 	top: 0;
 	width: 100%;
@@ -22,18 +25,71 @@ body {
 	margin: 0px;
 	background-color: white;
 	border-bottom: solid 2px #cccccc;
-
 }
 
 #nav-bar {
-	max-width: 1024px;
+	max-width: 960px;
 	margin: 0 auto;
+	height: 100%;
 }
 
+#name-heading {
+	float: left;
+	padding: 2em;
+	background-color: #4aaaa5;
+	margin: 0;
+	text-align: center;
+    height: 100%;
+}
+
+/*Menu Positioning*/
 nav {
 	float: right;
 	padding: 2em;
 }
+
+.nav-menu {
+	color: #DDD;
+	list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+
+
+
+/*Menu Styling*/
+
+.menu-item {
+	display: inline;	
+}
+
+li a{
+	color: grey;
+	font-size: 18px;
+	margin-right: 5px;
+	text-decoration: none;
+}
+li {
+	padding: 0 5px;
+	vertical-align: middle;
+	border-right: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a:hover {
+	color: red;
+}
+
+li a .active {
+	background-color: grey;	
+}
+
+/*'Standard' HTML Elements Styling*/
 
 h1, h2, h3 {
 	font-family: 'Georgia', Times, Times New Roman, serif;
@@ -41,75 +97,61 @@ h1, h2, h3 {
 
 p {
 	color: #777777;
-
+	font-size: px;
+	line-height: 150%;
 }
 
 h1 {
 	color: white;
 	font-size: 28px;
-}
-
-
-h2, h3 {
-	color: #4aaaa5;
+	font-variant: small-caps;
+	letter-spacing: 1px;
 }
 
 h2 {
 	font-size: 24px;
 }
 
-.container {
-	width: 1024px;
-	
-	
-	margin: 8em auto 6em auto; /*start content below hovering menu and finish before hovering footer*/
-
+h2, h3 {
+	color: #4aaaa5;
 }
 
-#main-section, #right-section, #bio-image, #footer {
+h3 {
+	font-size: 18px;
+}
+
+
+/*Content and Side Bar*/
+
+.container {
+	width: 960px;
+	margin: 8em auto 5em auto; /*start content below hovering menu and finish before hovering footer*/
+}
+
+#main-section, #right-section, #bio-image {
 	float: left;
 }
 
 #bio-image {
 	width: 200px;
-	margin: 0 20px 0 0;
+	margin: 0 30px 0 0;
+	border-bottom: solid grey 2px;
 }
 
 #main-section {
-	width: 60%;
-	height:1000px;
+	width: 650px;
+	box-sizing: border-box;
 	background-color: #fff;
 	padding: 25px;
 }
 
 #right-section {
-	width: 25%;
+	width: 270px;
+	box-sizing: border-box;
 	line-height: 1.5;
 	padding: 25px;
 	margin-left: 30px;
 	background-color: #fff;
-}
-
-
-#name-heading {
-	float: left;
-	padding: 1em;
-	background-color: #4aaaa5;
-	margin: 0;
-	text-align: center;
-    padding: 20px 20px;
-}
-
-.header-menu {
-	color: #DDD;
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu-item, .menu-item a {
-	display: inline;
-	color: grey;
 }
 
 hr.line {
@@ -120,22 +162,100 @@ hr.line {
 }
 
 
-#footer {
+/*Footer Styling*/
+#footer-container {
+	
+	height: 5em;
+	width: 960px;
+
+}
+
+#footer {    
 	position: fixed; /* Set the navbar to fixed position */
-    bottom: 0; /* Position the navbar at the bottom of the page */
-	width: 100%;
+	bottom: 0; /* Position the navbar at the bottom of the page */
+	width: 100%; 
 	border-top: 5px solid #4aaaa5;
 	background-color: #666666;
-	margin: 0px auto;
-	height: 5em; 
+	height: 4em; 
+	text-align: center;
 }
+
+
+
 
 #copywright-text {
-	width: 1024px;
-	margin: 0px auto;
+	width: 960px; /*set width of div in order to center text*/
+	margin: 20px auto 0 auto;	/*center text*/
 }
 
+/*Social Icon Sizing*/
 .social-icon {
-	width: 75px;
+	width: 70px;
 }
 
+/*Form Styling*/
+label {
+	color: grey;
+}
+
+textarea {
+	margin: 10px 0 15px 0;
+	width: 100%;
+}
+
+input[type=text] {
+	margin: 10px 0 15px 0;
+	width: 100%;
+	border: grey solid 1px;
+	font-size: 20px;
+}
+
+input[type=submit] {
+    border-radius: 5px;
+    border: 0;
+    padding:10px 20px;
+    background: #4aaaa5;
+    color: white;
+    font-size: 20px;
+}
+
+/*Gallery Styling*/
+
+.gallery {
+	width: 100%;
+}
+
+.gallery-item {
+	position: relative;
+	width: 40%;
+	float: left;
+	margin: 10px 5%;
+}
+
+.item-title {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	background-color: #4aaaa5;
+	padding: 10px;
+	box-sizing: border-box;
+	color: white;
+}
+
+.item-title:hover {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	background-color: blue;
+	padding: 10px;
+	box-sizing: border-box;
+	color: white;
+}
+
+.item-image {
+	width: 100%;
+}
+
+	
